@@ -1,1 +1,3 @@
-git config --global user.email "nikhilabaliji@gmail.com"
+git config --global 
+asaDWsdwadadw
+sAasxWDwsdxWSD
