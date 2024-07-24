@@ -1,0 +1,180 @@
+Strings in Java
+1. What is a String?
+In Java, a String is an object that represents a sequence of characters. Unlike some other languages, strings in Java are immutable, meaning that once a String object is created, it cannot be changed. Any operation that appears to modify a string will actually create a new string.
+
+2. Creating Strings
+Strings can be created in several ways:
+
+Using String Literals:
+
+java
+Copy code
+String str1 = "Hello, World!";
+Using the new Keyword:
+
+java
+Copy code
+String str2 = new String("Hello, World!");
+3. Immutable Nature of Strings
+Because strings are immutable:
+
+java
+Copy code
+String s1 = "Hello";
+String s2 = s1.concat(", World!");
+System.out.println(s1); // Outputs: Hello
+System.out.println(s2); // Outputs: Hello, World!
+In the example above, s1 remains unchanged, while s2 holds a new string.
+
+Built-in String Methods in Java
+Java’s String class includes a rich set of methods. Here’s a comprehensive list of commonly used methods:
+
+1. Basic Methods
+length()
+
+Description: Returns the length of the string.
+Usage: str.length()
+Example: "hello".length() returns 5.
+charAt(int index)
+
+Description: Returns the character at the specified index.
+Usage: str.charAt(index)
+Example: "hello".charAt(1) returns 'e'.
+isEmpty()
+
+Description: Checks if the string is empty.
+Usage: str.isEmpty()
+Example: "" .isEmpty() returns true.
+equals(Object obj)
+
+Description: Compares the string to another object for equality.
+Usage: str.equals(obj)
+Example: "hello".equals("hello") returns true.
+equalsIgnoreCase(String anotherString)
+
+Description: Compares the string to another string, ignoring case considerations.
+Usage: str.equalsIgnoreCase(anotherString)
+Example: "hello".equalsIgnoreCase("HELLO") returns true.
+compareTo(String anotherString)
+
+Description: Compares two strings lexicographically.
+Usage: str.compareTo(anotherString)
+Example: "abc".compareTo("bcd") returns a negative number.
+2. String Modification
+concat(String str)
+
+Description: Concatenates the specified string to the end of the current string.
+Usage: str.concat(str2)
+Example: "hello".concat(" world") returns "hello world".
+trim()
+
+Description: Removes leading and trailing whitespace.
+Usage: str.trim()
+Example: " hello ".trim() returns "hello".
+replace(char oldChar, char newChar)
+
+Description: Replaces all occurrences of a specified character with a new character.
+Usage: str.replace(oldChar, newChar)
+Example: "hello".replace('l', 'x') returns "hexxo".
+replaceAll(String regex, String replacement)
+
+Description: Replaces each substring that matches the given regular expression with the given replacement.
+Usage: str.replaceAll(regex, replacement)
+Example: "hello 123".replaceAll("\\d", "#") returns "hello ###".
+substring(int beginIndex, int endIndex)
+
+Description: Returns a new string that is a substring of the current string.
+Usage: str.substring(beginIndex, endIndex)
+Example: "hello".substring(1, 4) returns "ell".
+3. String Searching
+indexOf(String str)
+
+Description: Returns the index of the first occurrence of the specified substring.
+Usage: str.indexOf(substring)
+Example: "hello".indexOf("l") returns 2.
+lastIndexOf(String str)
+
+Description: Returns the index of the last occurrence of the specified substring.
+Usage: str.lastIndexOf(substring)
+Example: "hello".lastIndexOf("l") returns 3.
+contains(CharSequence sequence)
+
+Description: Checks if the string contains the specified sequence of characters.
+Usage: str.contains(sequence)
+Example: "hello".contains("ell") returns true.
+4. String Conversion
+toLowerCase()
+
+Description: Converts all characters in the string to lowercase.
+Usage: str.toLowerCase()
+Example: "HELLO".toLowerCase() returns "hello".
+toUpperCase()
+
+Description: Converts all characters in the string to uppercase.
+Usage: str.toUpperCase()
+Example: "hello".toUpperCase() returns "HELLO".
+toCharArray()
+
+Description: Converts the string into a new character array.
+Usage: str.toCharArray()
+Example: "hello".toCharArray() returns ['h', 'e', 'l', 'l', 'o'].
+valueOf(boolean b), valueOf(int i), valueOf(double d), etc.
+
+Description: Converts different data types to their string representation.
+Usage: String.valueOf(data)
+Example: String.valueOf(123) returns "123".
+5. Splitting and Joining
+split(String regex)
+
+Description: Splits the string into an array of substrings based on the given regular expression.
+Usage: str.split(regex)
+Example: "one,two,three".split(",") returns ["one", "two", "three"].
+join(CharSequence delimiter, CharSequence... elements)
+
+Description: Joins the given elements into a single string with the specified delimiter.
+Usage: String.join(delimiter, elements)
+Example: String.join(",", "one", "two", "three") returns "one,two,three".
+6. Regular Expressions
+matches(String regex)
+Description: Checks if the string matches the specified regular expression.
+Usage: str.matches(regex)
+Example: "123".matches("\\d+") returns true.
+7. Other Useful Methods
+startsWith(String prefix)
+
+Description: Checks if the string starts with the specified prefix.
+Usage: str.startsWith(prefix)
+Example: "hello".startsWith("he") returns true.
+endsWith(String suffix)
+
+Description: Checks if the string ends with the specified suffix.
+Usage: str.endsWith(suffix)
+Example: "hello".endsWith("lo") returns true.
+substring(int beginIndex)
+
+Description: Returns a substring starting from the specified index to the end of the string.
+Usage: str.substring(beginIndex)
+Example: "hello".substring(2) returns "llo".
+Example Usage of String Methods
+Here’s a short Java program demonstrating some of these methods:
+
+java
+Copy code
+public class StringExamples {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        
+        System.out.println("Length: " + str.length()); // 13
+        System.out.println("Char at 7: " + str.charAt(7)); // W
+        System.out.println("Substring (7, 12): " + str.substring(7, 12)); // World
+        System.out.println("To Lower Case: " + str.toLowerCase()); // hello, world!
+        System.out.println("Replace 'World' with 'Java': " + str.replace("World", "Java")); // Hello, Java!
+        System.out.println("Index of 'World': " + str.indexOf("World")); // 7
+        System.out.println("Trimmed String: '" + "   Hello   ".trim() + "'"); // 'Hello'
+        System.out.println("Starts with 'Hello': " + str.startsWith("Hello")); // true
+        System.out.println("Ends with '!': " + str.endsWith("!")); // true
+        System.out.println("Contains 'Java': " + str.contains("Java")); // false
+        System.out.println("Split by ',': " + String.join("|", str.split(","))); // Hello| World!
+    }
+}
+This code snippet provides a hands-on example of some common string operations and their outputs.

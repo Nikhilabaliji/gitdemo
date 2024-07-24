@@ -1,0 +1,236 @@
+1.package Day1;
+
+public class Program1 {
+	
+	static void sum() {      //when we give static we dont need object(program pm=new program();)
+		System.out.println(30+40);
+	} 
+	public static void main(String[] args) {
+		
+		sum();
+		System.out.println("Hello");
+
+	}
+
+}
+
+o/p:70
+hello
+
+2.package Day1;
+
+public class Program1 {
+	
+	void sum() {      //when we dont give static then we have to give object to call that function(program pm=new program();)
+		System.out.println(30+40);     
+	} 
+	public static void main(String[] args) {
+		program pm=new program();
+		pm.sum();
+		System.out.println("Hello");
+
+	}
+}
+
+
+3.package Day1;
+ 
+public class Program1 {
+    int c=20; //if we dont use static then this stores in another class so we get both as 21
+	void sum() {
+		c++;
+		System.out.println(c);
+	}
+ 
+	public static void main(String[] args) {
+		System.out.println("First object");
+		Program1 pm = new Program1();
+		pm.sum();
+		System.out.println("Second object");
+		Program1 pm2 = new Program1();
+		pm2.sum();
+ 
+	}
+ 
+}
+o/p:
+first object
+21
+second object
+21
+
+4.package Day1;
+ 
+public class Program1 {
+    static int c=20; //when we use static then it takes this as a whole memory so it stores so it will do math
+	void sum() {
+		c++;
+		System.out.println(c);
+	}
+ 
+	public static void main(String[] args) {
+		System.out.println("First object");
+		Program1 pm = new Program1();
+		pm.sum();
+		System.out.println("Second object");
+		Program1 pm2 = new Program1();
+		pm2.sum();
+ 
+	}
+ 
+}
+
+o/p:first object
+21
+second object
+22
+
+5.variables
+package Day1;
+ 
+public class Program1 {
+	int d = 40;//instance variable
+    static int c=20;//static variable
+	void sum() {
+		c++;
+		System.out.println(c);
+		System.out.println(d);
+		System.out.println(b);//it gives error as we gave b as local variable
+	}
+ 
+	public static void main(String[] args) {
+		System.out.println("First object");
+		Program1 pm = new Program1();
+		pm.sum();
+		int b=20; //local variable
+		System.out.println("Second object");
+		Program1 pm2 = new Program1();
+		pm2.sum();
+ 
+	}
+ 
+}
+
+6.double(expilict)
+package Day1;
+ 
+public class Program1 {
+	
+	public static void main(String[] args) {
+		int a = 10;
+		double b = a;
+		System.out.println(b);
+	}
+}
+o/p:10.0(it going from 10 to no where as its only giving .0 after 10 it gives o/p and not a error)
+
+7.int
+package Day1;
+ 
+public class Program1 {
+	
+	public static void main(String[] args) {
+		double a = 10.56;
+		int b = int(a);
+		System.out.println(b);
+	}
+}
+o/p:10 (if we give int b = a.it will give error as its double and have higher value and cant go to lower value i.e,10 so if we int(a) we are forcing it to give us the int value)
+
+8.package Day1;
+ 
+public class Program1 {
+	
+	public static void main(String[] args) {
+		int a = 10;
+		int b = 20;
+		double ans = a/b;
+		System.out.println(ans);
+	}
+}
+o/p:0.0(we are giving int so even if we got ans as 0.5 it only takes 0 and not decimal that is after . so it gives 0 and we asked it in double so 0.0)
+9.package Day1;
+ 
+public class Program1 {
+	
+	public static void main(String[] args) {
+		int a = 10;
+		int b = 20;
+		double ans = a/b;
+		System.out.println(ans);
+	}
+}
+o/p:0.5(here we took double for declaration too so thats we got 0.5 as ans)
+
+10.if
+package Day1;
+ 
+public class Program1 {
+	
+	public static void main(String[] args) {
+		int a = 10;
+		int b = 20;
+		if(a<b) {
+			System.out.println("a is small");
+		}
+		
+	}
+}
+o/p:a is small
+
+11.if else
+package Day1;
+ 
+public class Program1 {
+	
+	public static void main(String[] args) {
+		int a = 10;
+		int b = 20;
+		if(a>b) {
+			System.out.println("a is small");
+		}
+		else {
+			System.out.println("b is greater");
+		}
+		
+	}
+}
+o/p:b is greater
+
+12.if else(|| operator)
+package Day1;
+ 
+public class Program1 {
+	
+	public static void main(String[] args) {
+		int a = 10;
+		int b = 20;
+		int c = 30;
+		if(a>b || c>a) {
+			System.out.println("a is small");
+		}
+		else {
+			System.out.println("b is greater");
+		}
+	}
+}
+
+13.if else (&& operator)
+package Day1;
+ 
+public class Program1 {
+	
+	public static void main(String[] args) {
+		int a = 10;
+		int b = 20;
+		int c = 30;
+		if(a>b && c>a) {
+			System.out.println("a is small");
+		}
+		else {
+			System.out.println("b is greater");
+		}
+	}
+}
+
+ 
